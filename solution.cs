@@ -1,13 +1,21 @@
-using System;
-using System.Collections.Generic;
-
-public class Node
+public class LinkedList
 {
-    public char Data;
-    public Node Next;
-    public Node(char c)
+    private Node head;
+
+    public void AddToLast(char data)
     {
-        Data = c;
-        Next = null;
+        if (head == null)
+        {
+            head = new Node(data);
+        }
+        else
+        {
+            Node current = head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+            current.Next = new Node(data);
+        }
     }
 }
